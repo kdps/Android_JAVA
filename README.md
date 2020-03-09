@@ -3,6 +3,8 @@ Android JAVA
 
 > Bug
 
+Expected receiver of type ..., but got android.view.ContextThemeWrapper
+
 # https://ko.programqa.com/question/34523015/
 
 AppCompat 하위 클래스 활동에 문제가 있습니다. Android의 이슈 트래커에 게시 된 다음 문제를 발견했습니다. https://code.google.com/p/android/issues/detail?id=174871
