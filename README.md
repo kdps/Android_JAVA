@@ -1,9 +1,7 @@
 # Android_JAVA
 Android JAVA
 
-> Bug
-
-Expected receiver of type ..., but got android.view.ContextThemeWrapper
+# Expected receiver of type ..., but got android.view.ContextThemeWrapper
 
 https://issuetracker.google.com/issues/37048075
 
