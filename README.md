@@ -13,6 +13,9 @@ Use focusable and focusableInTouchMode
 
 ```JAVA
 View view = inflater.inflate (R.layout.fragment_example, container, false
+if (view instanceof LinearLayout) {
+  ...
+}
 ```
 
 ```XML
