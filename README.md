@@ -12,7 +12,7 @@ If you define a EditText with an onclick Handler defined in the Layout XML, the 
 Use focusable and focusableInTouchMode
 
 ```JAVA
-View view = inflater.inflate (R.layout.fragment_example, container, false
+View view = inflater.inflate (R.layout.fragment_example, container, false);
 if (view instanceof LinearLayout) {
   ...
 }
