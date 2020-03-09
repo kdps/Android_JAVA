@@ -7,7 +7,10 @@ https://issuetracker.google.com/issues/37048075
 
 If you define a EditText with an onclick Handler defined in the Layout XML, the onclick crashes when using the appcompat-v7 in Version 22.1.0 and 22.1.1. When using Version 22.0.0 it works. 
 
-# Set Context of Fragment
+# Set View Context of Fragment
+
+Use focusable and focusableInTouchMode
+
 ```JAVA
 View view = inflater.inflate (R.layout.fragment_example, container, false
 ```
