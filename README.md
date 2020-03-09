@@ -5,7 +5,7 @@ Android JAVA
 
 Expected receiver of type ..., but got android.view.ContextThemeWrapper
 
-# https://ko.programqa.com/question/34523015/
+https://issuetracker.google.com/issues/37048075
 
 If you define a EditText with an onclick Handler defined in the Layout XML, the onclick crashes when using the appcompat-v7 in Version 22.1.0 and 22.1.1. When using Version 22.0.0 it works. 
 
