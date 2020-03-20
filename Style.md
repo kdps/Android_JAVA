@@ -13,7 +13,15 @@
 
 # Change Width/Height
 
-```
+```Java
 mBtnSticker.getLayoutParams().height = getResources ().getDimensionPixelSize (R.dimen.px_60);
 mBtnSticker.requestLayout();
+```
+
+## TextView
+
+# Remove font padding
+
+```Java
+android:includeFontPadding="false"
 ```
