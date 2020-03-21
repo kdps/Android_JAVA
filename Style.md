@@ -28,7 +28,9 @@ android:includeFontPadding="false"
 
 ## Switch
 
-# Custom Switcher
+# Custom Switch
+
+!!! Thumbnail and track color is same when switch is checked
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
