@@ -25,3 +25,22 @@ mBtnSticker.requestLayout();
 ```Java
 android:includeFontPadding="false"
 ```
+
+## Switch
+
+# Custom Switcher
+
+```XML
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+<style name="materialTheme" parent="@style/Theme.AppCompat.Light">
+    <item name="colorPrimary">#2e7d32</item>
+    <item name="colorPrimaryDark">#005005</item>
+    <item name="colorAccent">#80d8ff</item>
+    <item name="colorSwitchThumbNormal">#49a7cc</item>
+    <item name="android:colorButtonNormal">#49a7cc</item>
+    <item name="android:textColorPrimary">#DADADA</item>
+    <item name="android:spinnerItemStyle">@style/SpinnerItem</item>
+    <item name="android:spinnerDropDownItemStyle">@style/SpinnerDropDownItem</item>
+</style>
+```
