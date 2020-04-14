@@ -1,3 +1,8 @@
+
+// => XML
+// <android.support.v7.widget.Toolbar
+// <android.support.v7.widget.RecyclerView
+
 public abstract class ToggleScrollListener extends RecyclerView.OnScrollListener {
     private static float HIDE_THRESHOLD = 10;
     private int scrolledDistance = 0;
@@ -41,6 +46,7 @@ public abstract class ToggleScrollListener extends RecyclerView.OnScrollListener
 
 }
 
+// Listener
 recyclerView.addOnScrollListener(new ToggleScrollListener (tab) {
     @Override
     public synchronized void onHide() {
