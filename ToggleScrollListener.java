@@ -24,8 +24,6 @@ public abstract class ToggleScrollListener extends RecyclerView.OnScrollListener
     public void onScrolled (RecyclerView recyclerView, int dx, int dy) {
         super.onScrolled (recyclerView, dx, dy);
 
-        FactoryLogger.Debug (scrolledDistance);
-
         if (scrolledDistance > HIDE_THRESHOLD && controlsVisible) {
             onHide ();
             controlsVisible = false;
