@@ -24,7 +24,13 @@ public abstract class ToggleScrollListener extends RecyclerView.OnScrollListener
     public void onScrolled (RecyclerView recyclerView, int dx, int dy) {
         super.onScrolled (recyclerView, dx, dy);
 
-        if (scrolledDistance > HIDE_THRESHOLD && controlsVisible) {
+        int computeY = recyclerView.computeVerticalScrollOffset ();
+        
+        if (computeY <= 10) {
+            onShow ();
+            controlsVisible = true;
+            scrolledDistance = - tabLayout.getHeight ();
+        } else if (scrolledDistance > HIDE_THRESHOLD && controlsVisible) {
             onHide ();
             controlsVisible = false;
             scrolledDistance = tabLayout.getHeight ();
