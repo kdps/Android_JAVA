@@ -17,7 +17,6 @@ public abstract class ToggleScrollListener extends RecyclerView.OnScrollListener
     @Override
     public void onScrollStateChanged (RecyclerView recyclerView, int newState) {
         super.onScrollStateChanged (recyclerView, newState);
-
     }
 
     @Override
