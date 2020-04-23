@@ -1,4 +1,3 @@
-
 import android.support.annotation.NonNull;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CoordinatorLayout;
@@ -75,6 +74,7 @@ public abstract class ToggleScrollListenerWithAppbar extends RecyclerView.OnScro
 
             // Fold
             if (controlsVisible) {
+                // Unfold
                 if (! scrollToUp && scrolledDistance > 0) {
                     scrolledDistance = scrolledDistance + (dy);
                 }
@@ -98,9 +98,10 @@ public abstract class ToggleScrollListenerWithAppbar extends RecyclerView.OnScro
                         scrolledDistance = - headerHeight;
                     }
                 }
-                
-            // Unfold
+
+                // Unfold
             } else {
+                // Fold
                 if (scrollToUp && scrolledDistance < 0) {
                     scrolledDistance = scrolledDistance + (dy);
                 }
@@ -116,6 +117,12 @@ public abstract class ToggleScrollListenerWithAppbar extends RecyclerView.OnScro
                         CoordinatorLayout.LayoutParams params = (CoordinatorLayout.LayoutParams) appBar.getLayoutParams ();
                         params.height = resizeHeight;
                         appBar.setLayoutParams (params);
+                    } else {
+                        onShow ();
+                        restoreAppbar ();
+
+                        controlsVisible = true;
+                        scrolledDistance = headerHeight;
                     }
                 }
             }
