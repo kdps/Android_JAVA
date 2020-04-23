@@ -30,22 +30,27 @@ public abstract class ToggleScrollListenerWithAppbar extends RecyclerView.OnScro
     }
 
     private void hiddenAppbar () {
-        CoordinatorLayout.LayoutParams params = (CoordinatorLayout.LayoutParams) appBar.getLayoutParams ();
-        params.height = inlineHeight;
-        appBar.setLayoutParams (params);
+        setAppbarHeight(inlineHeight);
     }
 
     private void restoreAppbar () {
         header.animate ().translationY (0).setInterpolator (new AccelerateInterpolator (0)).setDuration (0);
-
-        CoordinatorLayout.LayoutParams params = (CoordinatorLayout.LayoutParams) appBar.getLayoutParams ();
-        params.height = appbarHeight;
-        appBar.setLayoutParams (params);
+        setAppbarHeight(appbarHeight);
     }
 
     private void setStatePosition (boolean isHidden) {
         controlsVisible = ! isHidden;
         scrolledDistance = isHidden ? headerHeight : - headerHeight;
+    }
+
+    private void setAppbarHeight (int size) {
+        CoordinatorLayout.LayoutParams params = (CoordinatorLayout.LayoutParams) appBar.getLayoutParams ();
+        params.height = size;
+        appBar.setLayoutParams (params);
+    }
+
+    private void transformHeaderY(int Y) {
+        header.animate ().translationY (Y).setInterpolator (new AccelerateInterpolator (0)).setDuration (0);
     }
 
     @Override
@@ -81,15 +86,13 @@ public abstract class ToggleScrollListenerWithAppbar extends RecyclerView.OnScro
 
                 // stretch view
                 if (scrolledDistance > 0) {
-                    header.animate ().translationY (- scrolledDistance).setInterpolator (new AccelerateInterpolator (0)).setDuration (0);
+                    transformHeaderY(- scrolledDistance);
 
                     int     resizeHeight = (appbarHeight - scrolledDistance);
                     boolean isEnough     = inlineHeight < resizeHeight;
 
                     if (isEnough) {
-                        CoordinatorLayout.LayoutParams params = (CoordinatorLayout.LayoutParams) appBar.getLayoutParams ();
-                        params.height = resizeHeight;
-                        appBar.setLayoutParams (params);
+                        setAppbarHeight(resizeHeight);
                     } else {
                         // Fold view
                         onHide ();
@@ -110,13 +113,11 @@ public abstract class ToggleScrollListenerWithAppbar extends RecyclerView.OnScro
                 if (scrolledDistance < 0) {
                     onShow ();
                     int moveDistance = inlineHeight + (- (appbarHeight - (- scrolledDistance)));
-                    header.animate ().translationY (moveDistance).setInterpolator (new AccelerateInterpolator (0)).setDuration (0);
                     int resizeHeight = ((appbarHeight + moveDistance));
+                    transformHeaderY(moveDistance);
 
                     if (inlineHeight < resizeHeight) {
-                        CoordinatorLayout.LayoutParams params = (CoordinatorLayout.LayoutParams) appBar.getLayoutParams ();
-                        params.height = resizeHeight;
-                        appBar.setLayoutParams (params);
+                        setAppbarHeight(resizeHeight);
                     } else {
                         onShow ();
                         restoreAppbar ();
