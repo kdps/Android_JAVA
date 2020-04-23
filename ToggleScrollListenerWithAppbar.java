@@ -1,3 +1,11 @@
+
+import android.support.annotation.NonNull;
+import android.support.design.widget.AppBarLayout;
+import android.support.design.widget.CoordinatorLayout;
+import android.support.v7.widget.RecyclerView;
+import android.view.animation.AccelerateInterpolator;
+import android.widget.LinearLayout;
+
 public abstract class ToggleScrollListenerWithAppbar extends RecyclerView.OnScrollListener {
     private static float HIDE_THRESHOLD = 10;
     private boolean controlsVisible = true;
