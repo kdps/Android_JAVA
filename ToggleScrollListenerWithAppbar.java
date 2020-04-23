@@ -56,7 +56,9 @@ public abstract class ToggleScrollListenerWithAppbar extends RecyclerView.OnScro
         boolean scrollToUp = (dy > 0);
         int     computeY   = recyclerView.computeVerticalScrollOffset ();
 
+        // Null Exception
         if (header != null) {
+            // scroll is in top
             if (computeY < HIDE_THRESHOLD) {
                 onShow ();
                 restoreAppbar ();
@@ -71,11 +73,13 @@ public abstract class ToggleScrollListenerWithAppbar extends RecyclerView.OnScro
                 setStatePosition (false);
             }
 
+            // Fold
             if (controlsVisible) {
                 if (! scrollToUp && scrolledDistance > 0) {
                     scrolledDistance = scrolledDistance + (dy);
                 }
 
+                // stretch view
                 if (scrolledDistance > 0) {
                     header.animate ().translationY (- scrolledDistance).setInterpolator (new AccelerateInterpolator (0)).setDuration (0);
 
@@ -87,17 +91,21 @@ public abstract class ToggleScrollListenerWithAppbar extends RecyclerView.OnScro
                         params.height = resizeHeight;
                         appBar.setLayoutParams (params);
                     } else {
+                        // Fold view
                         onHide ();
                         hiddenAppbar ();
                         controlsVisible = false;
                         scrolledDistance = - headerHeight;
                     }
                 }
+                
+            // Unfold
             } else {
                 if (scrollToUp && scrolledDistance < 0) {
                     scrolledDistance = scrolledDistance + (dy);
                 }
 
+                // stretch view
                 if (scrolledDistance < 0) {
                     onShow ();
                     int moveDistance = inlineHeight + (- (appbarHeight - (- scrolledDistance)));
