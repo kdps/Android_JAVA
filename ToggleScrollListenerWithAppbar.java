@@ -8,7 +8,7 @@ public abstract class ToggleScrollListenerWithAppbar extends RecyclerView.OnScro
     private LinearLayout header;
     private AppBarLayout appBar;
 
-    public ToggleScrollListenerWithAppbar (LinearLayout _header, AppBarLayout _appBar, int height) {
+    protected ToggleScrollListenerWithAppbar (LinearLayout _header, AppBarLayout _appBar, int height) {
         header = _header;
         appBar = _appBar;
         HIDE_THRESHOLD = height;
@@ -18,7 +18,7 @@ public abstract class ToggleScrollListenerWithAppbar extends RecyclerView.OnScro
     }
 
     @Override
-    public void onScrollStateChanged (RecyclerView recyclerView, int newState) {
+    public void onScrollStateChanged (@NonNull final RecyclerView recyclerView, int newState) {
         super.onScrollStateChanged (recyclerView, newState);
     }
 
@@ -63,8 +63,8 @@ public abstract class ToggleScrollListenerWithAppbar extends RecyclerView.OnScro
                 setStatePosition (false);
             }
 
-            if (controlsVisible && scrolledDistance < - HIDE_THRESHOLD) {
-                if (! scrollToUp) {
+            if (controlsVisible) {
+                if (! scrollToUp && scrolledDistance > 0) {
                     scrolledDistance = scrolledDistance + (dy);
                 }
 
@@ -86,7 +86,7 @@ public abstract class ToggleScrollListenerWithAppbar extends RecyclerView.OnScro
                     }
                 }
             } else {
-                if (scrollToUp && scrolledDistance > HIDE_THRESHOLD) {
+                if (scrollToUp && scrolledDistance < 0) {
                     scrolledDistance = scrolledDistance + (dy);
                 }
 
