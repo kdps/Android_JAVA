@@ -59,7 +59,6 @@ public abstract class ToggleScrollListenerWithAppbar extends RecyclerView.OnScro
                 if (scrolledDistance < 0) {
                     onShow ();
                     int moveDistance = - (appbar_height - (- scrolledDistance));
-                    FactoryLogger.Debug (moveDistance, "moveDistance");
                     header.animate ().translationY (inline_height + moveDistance).setInterpolator (new AccelerateInterpolator (0)).setDuration (0);
                     int resizeHeight = (inline_height + (appbar_height + moveDistance));
 
