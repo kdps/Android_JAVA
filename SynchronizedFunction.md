@@ -20,7 +20,9 @@ RETURN
 
 because AsyncHttpClient is pass syncronized
 
-```Use This```
+Use This
+
+```Java
 public interface Callback {
     void callback (Boolean bool);
 }
