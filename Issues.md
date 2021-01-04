@@ -10,7 +10,7 @@ just use Glide
 
 ### Duplicate class com.google.common.util.concurrent.ListenableFuture
 
-Doesn't not need to append 'implementation 'com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava''
+Doesn't need to append 'implementation 'com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava''
 
 Type the below text to Commmand Line When you need debugging
 ```Command
