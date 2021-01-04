@@ -1,13 +1,15 @@
-### Dependency
+### oneTimeWorkRequest
 
-```gradle
-implementation "androidx.work:work-runtime:2.3.3"
-implementation "androidx.concurrent:concurrent-futures:1.1.0"
-// https://stackoverflow.com/questions/56639529/duplicate-class-com-google-common-util-concurrent-listenablefuture-found-in-modu
-implementation 'com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava'
+```OneTimeWorkRequest
+OneTimeWorkRequest oneTimeWorkRequest = new OneTimeWorkRequest.Builder(MyWorker.class).build();
+WorkManager.getInstance().enqueue(oneTimeWorkRequest);
 ```
 
-```Period Worker
-PeriodicWorkRequest workRequest = new PeriodicWorkRequest.Builder(WorkerClass.class, 1, TimeUnit.MINUTES).build();
-WorkManager.getInstance(AppContext).enqueue(workRequest);
+```PeriodicWorkRequest
+Constraints         constraints = new Constraints.Builder().setRequiredNetworkType(NetworkType.CONNECTED).build();
+PeriodicWorkRequest build       = new PeriodicWorkRequest.Builder (MyWorker.class, 1, TimeUnit.HOURS).addTag ("Worker").setConstraints (constraints).build ();
+WorkManager         instance    = WorkManager.getInstance();
+if (instance != null) {
+    instance.enqueueUniquePeriodicWork(TAG, ExistingPeriodicWorkPolicy.REPLACE, build);
+}
 ```
