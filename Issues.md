@@ -5,9 +5,10 @@
 https://stackoverflow.com/questions/50782806/android-google-maps-java-lang-noclassdeffounderror-failed-resolution-of-lorg-a
 
 Put this in the Manifest <application> tag:
-
+    
+```xml
 <uses-library android:name="org.apache.http.legacy" android:required="false"/>
-
+```
 
 ## Build.VERSION.SDK_INT 19 / Build.VERSION_CODES.KITKAT
 
