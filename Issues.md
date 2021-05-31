@@ -4,7 +4,7 @@
 
 Android studio is Fucking idiot IDE
 
-Try modify gradle dependency and Sync fucking sucks dependencies And update Fucking DICK Gradle
+Try modify gradle dependency and Sync fucking sucks dependencies And update Fucking DICK Gradle (com.fuck.tools.build)
 
 FUCK YOU GOOGLE
 
