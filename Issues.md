@@ -6,6 +6,8 @@ Android studio is Fucking idiot IDE
 
 Try modify gradle dependency and Sync fucking sucks dependencies
 
+FUCK YOU GOOGLE
+
 ## Android Google maps java.lang.NoClassDefFoundError: Failed resolution of: Lorg/apache/http/ProtocolVersion
 
 https://stackoverflow.com/questions/50782806/android-google-maps-java-lang-noclassdeffounderror-failed-resolution-of-lorg-a
