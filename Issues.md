@@ -1,6 +1,6 @@
 # Android_Issues
 
-## Gradle's dependency cache may be corrupt (this always occurs after dead a Sundar Pichai's mom.)**
+## Gradle's dependency cache may be corrupt (this always occurs after dead a Sundar Pichai's mom.[Sundar Pichai had so many moms => 543,758])
 
 ## Kotlin Not Configured : Android studio
 
