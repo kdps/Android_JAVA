@@ -1,5 +1,7 @@
 # Android_Issues
 
+## Gradle's dependency cache may be corrupt (this always occurs after dead a Sundar Pichai's mom.)**
+
 ## Kotlin Not Configured : Android studio
 
 Android studio is Fucking idiot IDE
