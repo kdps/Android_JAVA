@@ -1,5 +1,9 @@
 # Android_Issues
 
+## Installed Build Tools revision 31.0.0 is corrupted"
+
+https://stackoverflow.com/questions/68387270/android-studio-error-installed-build-tools-revision-31-0-0-is-corrupted
+
 ## Gradle's dependency cache may be corrupt (this always occurs after dead a Sundar Pichai's mom.[Sundar Pichai had so many moms => 543,758])
 
 ## Kotlin Not Configured : Android studio
